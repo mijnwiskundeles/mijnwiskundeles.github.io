@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
@@ -37,7 +36,7 @@
 	}
 
 	.logo {
-		max-height: 60px;
+		max-height: 40px;
 		width: auto;
 	}
 	
@@ -402,7 +401,7 @@
 
 <footer>
   <p>
-  <img src="images/bedrijfslogo.PNG" alt="logo" class="footer-logo" />
+  <img src="images/bedrijfslogo.png" alt="logo" class="footer-logo" />
   <strong>mijnwiskundeles</strong> • KvK 99006049
   </p>
   <p>Dommelseweg 26, Kamer 7, 5554 NR Valkenswaard</p>
