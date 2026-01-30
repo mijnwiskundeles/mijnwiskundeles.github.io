@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Bedankt voor je aanvraag | mijnwiskundeles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin:0; color:#1f2937; line-height:1.6; }
+    header {
+		background: linear-gradient(
+			135deg,
+			#0b132b 0%,
+			#0b132b 50%,
+			#0b132b 100%
+		);
+		color:white;
+		padding:3rem 1.5rem;
+		position: relative;   /* heel belangrijk voor absolute logo */
+	}
+    header h1 { font-size:2.2rem; margin-bottom:1rem; }
+    header p { font-size:1.1rem; max-width:700px; }
+    .btn { background:#20c9dc; color:#022; padding:0.75rem 1.5rem; border-radius:6px; text-decoration:none; display:inline-block; margin-top:1.5rem; }
+    section { padding:3rem 1.5rem; max-width:1000px; margin:auto; }
+    h2 { font-size:1.8rem; margin-bottom:1rem; }
+    <!-- .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; } -->
+    .card { background:#f8fafc; padding:1.5rem; border-radius:10px; }
+    footer { background:#f1f5f9; padding:2rem 1.5rem; font-size:0.9rem; }
+    label { display:block; margin-top:1rem; font-weight:600; }
+    input, select, textarea { width:100%; padding:0.5rem; margin-top:0.25rem; }
+    button { margin-top:1.5rem; padding:0.75rem 1.5rem; background:#2563eb; color:white; border:none; border-radius:6px; cursor:pointer; }
+    .note { font-size:0.9rem; color:#475569; margin-top:0.5rem; }
+	
+	.header-inner {
+		max-width: 1100px;
+		margin: 0 auto;
+		text-align: center; /* header tekst blijft gecentreerd */
+	}
+
+	.logo {
+		max-height: 40px;
+		width: auto;
+	}
+	
+	.logo-block {
+		position: absolute;
+		top: 20px;   /* afstand vanaf de bovenkant */
+		left: 20px;  /* afstand vanaf de linkerkant */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.company-name {
+		margin-top: 0.25rem;
+		font-size: 0.85rem;
+		font-weight: 500;
+		color: rgba(210, 235, 255, 0.94);
+		letter-spacing: 0.04em;
+	}
+
+	.header-text {
+		flex: 1;
+		max-width: 1000px;      /* bepaalt de breedte van beide regels */
+		margin: 0 auto;         /* centreert de container */
+		padding-left: 140px;    /* ruimte voor logo */
+		text-align: left;
+	}
+
+	/* Mobiel */
+	@media (max-width: 768px) {
+		.logo-block {
+			position: static;
+			margin: 0 auto 1rem auto;
+		}
+
+		.header-text {
+			padding-left: 0;
+			text-align: center;
+		}
+		
+		.over-mij-content {
+			grid-template-columns: 1fr;
+		}
+
+		.over-mij-content > div:first-child {
+			order: 1; /* tekst */
+		}
+
+		.over-mij-content > div:last-child {
+			order: 2; /* foto */
+		}
+
+		.profile-photo {
+			max-width: 200px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	
+	footer {
+		background:#f1f5f9;
+		padding:2rem 1.5rem;
+		font-size:0.9rem;
+	}
+
+	.footer-logo {
+		max-height: 10px;
+		width: auto;
+		vertical-align: middle;
+		margin-right: 0.5rem;
+	}
+
+	.header-text h1,
+	.header-text p {
+		margin: 0;
+	}
+	
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.card {
+		background: white;
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+	}
+
+	.card h3 {
+		margin-top: 0;
+		margin-bottom: 0.6rem;
+		font-size: 1.1rem;
+		color: #0b132b;
+	}
+	
+	.card-icon {
+		margin-bottom: 0.6rem;
+	}
+
+	.card-icon svg {
+		width: 22px;
+		height: 22px;
+		stroke: #20c9dc; /* accentkleur uit je logo */
+		stroke-width: 1.8;
+	}
+	
+	.btw-note {
+		margin-top: 1rem;
+		font-size: 0.85rem;
+		color: #64748b; /* zacht grijs-blauw */
+	}
+	
+	.background-box {
+		margin-top: 1.5rem;
+		padding-left: 1rem;
+		border-left: 3px solid #20c9dc; /* accentkleur uit je logo */
+	}
+
+	.background-box h3 {
+		margin: 0 0 0.4rem 0;
+		font-size: 1rem;
+		color: #0f172a;
+	}
+
+	.background-box ul {
+		margin: 0;
+		padding-left: 1.2rem;
+		font-size: 0.9rem;
+		color: #334155;
+	}
+
+	.background-box li {
+		margin-bottom: 0.3rem;
+	}
+
+	.profile-photo {
+		float: left;
+		width: 180px;        /* Change size here */
+		height: auto;
+		border-radius: 50%; /* Optional: gives soft corners */
+		display: block;
+	}
+	
+	.download-box .btn {
+		padding: 0.4rem 0.9rem;
+		font-size: 0.85rem;
+	}
+
+	.small-note {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+		color: #64748b;
+	}
+	
+	.over-mij-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr; /* tekst breder dan foto */
+		gap:2rem;
+		margin-top: 2rem;
+		align-items: start;
+	}
+
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <img src="images/bedrijfslogo_backgr_0b132bf0.png" alt="mijnwiskundeles logo" class="logo" />
+      <div class="company-name">mijnwiskundeles</div>
+    </div>
+
+    <div class="header-text">
+      <h1>Persoonlijke rekenen- en wiskundebijles in Valkenswaard</h1>
+      <p>Sessies van 2 uur • Eerste les gratis • Basisschool & voortgezet onderwijs</p>
+    </div>
+  </div>
+</header>
+
+  <main style="max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; text-align: center;">
+    <p>
+      Bedankt voor je aanvraag voor een proefles bij <strong>mijnwiskundeles</strong>.
+    </p>
+
+    <p>
+      Ik neem je aanvraag zorgvuldig door. Je ontvangt uiterlijk de volgende dag
+      een e-mail met een korte terugkoppeling en de vervolgstappen.
+    </p>
+
+    <p>
+      Met vriendelijke groet,<br>
+      Norbert
+    </p>
+
+    <a href="index.html" class="btn" style="margin-top: 2rem; display: inline-block;">
+      Terug naar de website
+    </a>
+  </main>
+</body>
+</html>
