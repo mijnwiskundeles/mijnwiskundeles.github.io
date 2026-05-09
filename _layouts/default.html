@@ -506,13 +506,13 @@ function isDisabled(date) {
 
 // HTML date picker workaround
 // validatie bij wijziging
-dateInput.addEventListener('change', () => {
-  const selected = new Date(dateInput.value);
-  if (isDisabled(selected)) {
-    alert('Deze datum is niet beschikbaar.');
-    dateInput.value = '';
-  }
-});
+//dateInput.addEventListener('change', () => {
+//  const selected = new Date(dateInput.value);
+//  if (isDisabled(selected)) {
+//    alert('Deze datum is niet beschikbaar.');
+//    dateInput.value = '';
+//  }
+//});
 
 // === Tijden per dag ===
 const tijdSelect = document.getElementById('tijdSelect');
@@ -536,6 +536,16 @@ function updateTijden() {
   if (!dateInput.value) return;
 
   const date = new Date(dateInput.value);
+  
+  if (isDisabled(date)) {
+    const opt = document.createElement('option');
+    opt.textContent = 'Geen tijden beschikbaar';
+    opt.disabled = true;
+    opt.selected = true;
+    tijdSelect.appendChild(opt);
+    return;
+  }  
+  
   const day = date.getDay();
 
   let tijden = [];
